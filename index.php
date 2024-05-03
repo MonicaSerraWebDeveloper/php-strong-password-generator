@@ -29,11 +29,19 @@
         <input id="length-password" class="form-control" type="number" name="length-password" value="<?php echo $numberLengthPassword ?>" />
         <div>
             <div>Consenti ripetizione di uno o più caratteri</div>
-            <label for="repetition">Sì</label>
-            <input <?php echo $repetitionCaracther === true ? 'checked' : '' ?> id="repetition" type="radio" name="repetition" value="true">
-            <label for="repetition">No</label> 
-            <input <?php echo $repetitionCaracther === false ? 'checked' : '' ?> id="repetition" type="radio" name="repetition" value="false">
-        </div>
+                <label for="repetition">Sì</label>
+                <input <?php echo $repetitionCaracther === true ? 'checked' : '' ?> id="repetition" type="radio" name="repetition" value="true">
+                <label for="repetition">No</label> 
+                <input <?php echo $repetitionCaracther === false ? 'checked' : '' ?> id="repetition" type="radio" name="repetition" value="false">
+            </div>
+            <div>
+                <input id="letter" type="checkbox" name="typology" value="letter">
+                <label for="letter">Lettere</label>
+                <input id="number" type="checkbox" name="typology" value="number">
+                <label for="number">Numeri</label>
+                <input id="symbol" type="checkbox" name="typology" value="symbol">
+                <label for="symbol">Simboli</label>
+            </div>
     
         <button type="submit"class="btn btn-primary">Invia</button>
         <button type="reset" class="btn btn-secondary">Reset</button>
