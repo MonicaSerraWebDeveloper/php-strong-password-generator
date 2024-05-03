@@ -1,15 +1,19 @@
 <?php 
 
     $numberLengthPassword = intval($_GET['length-password']);
+    $officialPassword = generatePassword($numberLengthPassword);
+    var_dump($officialPassword);
 
-    function generatePassword() {
-        
-        for($i; $i <= $numberLengthPassword; $i++) {
+    function generatePassword($number) {
+        $alphaNumericString = 'abcdefghijklmnopqrstuvzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@.<>-_';
+        $newPassword = '';
+        for($i = 0; $i <= $number; $i++) {
+            $randomIndex = rand(0, strlen($alphaNumericString));  
+            $newPassword .= $alphaNumericString[$randomIndex];   
+        };
+        return $newPassword;
+    };
 
-        }
-    }
-
-    
 
 ?>
 
@@ -27,7 +31,7 @@
 <body>
     <h1>Strong Password Generator</h1>
     <h2>Genera una password sicura</h2>
-    <p>La tua password è: <?php echo $numberLengthPassword ?> </p>
+    <p>La tua password è: <?php  ?> </p>
     <form method="GET">
         <label for="length-password">Lunghezza password:</label>
         <input id="length-password" class="form-control" type="number" name="length-password" />
