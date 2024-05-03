@@ -2,25 +2,38 @@
 
     $numberLengthPassword = isset($_GET['length-password']) ? intval($_GET['length-password']) : '';
     $repetitionCaracther = isset($_GET['repetition']) && $_GET['repetition'] === 'true' ? true : false;
-    $filteringTypology = isset($_GET['typology']) ? $_GET['typology'] : '';
-    $officialPassword = generatePassword($numberLengthPassword, $repetitionCaracther, $filteringTypology);
+    $letterCheck = isset($_GET['letter']) && $_GET['letter'] === 'letter' ? true : false;
+    $numberCheck = isset($_GET['number']) && $_GET['number'] === 'number' ? true : false;
+    $symbolCheck = isset($_GET['symbol']) && $_GET['symbol'] === 'symbol' ? true : false;
 
-    function generatePassword($number, $boolean, $typology) {
-
-        $userPreferences = '';
-        if (!$typology) {
-            $userPreferences .= $alphaNumericString = 'abcdefghijklmnopqrstuvzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@.<>-_#+|*';
-        } elseif ($typology) {
-            if ($typology === 'letter') {
-                $userPreferences .= 'abcdefghijklmnopqrstuvzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            }
-            if ($typology === 'number') {
-                $userPreferences .= '0123456789';
-            } 
-            if ($typology === 'symbol') {
-                $userPreferences .= '@.<>-_#+|*';
-            };
+    $userPreferences = '';
+    $alphaNumericString = 'abcdefghijklmnopqrstuvzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@.<>-_#+|*';
+    $letter = 'abcdefghijklmnopqrstuvzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $number = '0123456789';
+    $symbol = '@.<>-_#+|*';
+    
+        if (!$numberCheck && !$letterCheck && !$symbolCheck) {
+            $userPreferences = $alphaNumericString;
         };
+       
+        if ($numberCheck || $letterCheck || $symbolCheck) {
+
+            if ($letterCheck) {
+                $userPreferences .= $letter;
+            }
+            if ($numberCheck) {
+                $userPreferences .= $number;
+            } 
+            if ($symbolCheck) {
+                $userPreferences .= $symbol;
+            };
+    
+        };
+        
+
+        $officialPassword = generatePassword($numberLengthPassword, $repetitionCaracther, $userPreferences);
+
+    function generatePassword($number, $boolean, $userPreferences) {
         
         
         $newPassword = '';
