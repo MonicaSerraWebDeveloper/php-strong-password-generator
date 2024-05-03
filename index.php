@@ -1,6 +1,6 @@
 <?php 
 
-    $numberLengthPassword = intval($_GET['length-password']);
+    $numberLengthPassword = isset($_GET['length-password']) ? intval($_GET['length-password']) : '';
     $officialPassword = generatePassword($numberLengthPassword);
     var_dump($officialPassword);
 
