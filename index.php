@@ -1,4 +1,13 @@
-<?php require __DIR__ . '/functions.php'; ?>
+<?php 
+
+    require __DIR__ . '/functions.php'; 
+
+    session_start();
+    if (!empty($_GET['length-password'])) {
+        $_SESSION ['password'] = $officialPassword;
+        header('Location: ./thankyou.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +23,6 @@
 <body>
     <h1>Strong Password Generator</h1>
     <h2>Genera una password sicura</h2>
-    <p>La tua password è: <span class="font-monospace"><?php echo $officialPassword ?></span> </p>
     <form method="GET">
         <label for="length-password">Lunghezza password:</label>
         <input id="length-password" class="form-control" type="number" name="length-password" />
