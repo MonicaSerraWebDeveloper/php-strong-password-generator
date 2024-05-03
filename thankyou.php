@@ -1,6 +1,6 @@
 <?php 
-    // session_start();
-    // $officialPassword = $_SESSION['password']
+    session_start();
+    $officialPassword = $_SESSION['password']
 ?>
 
 <!DOCTYPE html>

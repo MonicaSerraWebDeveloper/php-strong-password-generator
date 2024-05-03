@@ -13,11 +13,10 @@
         } elseif ($typology) {
             if ($typology === 'letter') {
                 $userPreferences .= 'abcdefghijklmnopqrstuvzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            } 
+            }
             if ($typology === 'number') {
                 $userPreferences .= '0123456789';
             } 
-
             if ($typology === 'symbol') {
                 $userPreferences .= '@.<>-_#+|*';
             };
