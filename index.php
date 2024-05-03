@@ -10,6 +10,13 @@
     <title>Password sicura</title>
 </head>
 <body>
-    
+    <h1>Strong Password Generator</h1>
+    <h2>Genera una password sicura</h2>
+    <p>La tua password è: </p>
+    <form method="GET">
+        <label for="length-password">Lunghezza password:</label>
+        <input class="form-control" id="length-password" type="number" name="" />
+        <button type="submit"class="btn btn-primary">Invia</button>
+    </form>
 </body>
 </html>
