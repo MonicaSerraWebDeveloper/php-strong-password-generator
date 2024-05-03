@@ -26,13 +26,13 @@
     <p>La tua password è: <?php echo $officialPassword ?> </p>
     <form method="GET">
         <label for="length-password">Lunghezza password:</label>
-        <input id="length-password" class="form-control" type="number" name="length-password" />
+        <input id="length-password" class="form-control" type="number" name="length-password" value="<?php echo $numberLengthPassword ?>" />
         <div>
             <div>Consenti ripetizione di uno o più caratteri</div>
             <label for="repetition">Sì</label>
-            <input id="repetition" type="radio" name="repetition" value="true">
+            <input <?php echo $repetitionCaracther === true ? 'checked' : '' ?> id="repetition" type="radio" name="repetition" value="true">
             <label for="repetition">No</label> 
-            <input id="repetition" type="radio" name="repetition" value="false">
+            <input <?php echo $repetitionCaracther === false ? 'checked' : '' ?> id="repetition" type="radio" name="repetition" value="false">
         </div>
     
         <button type="submit"class="btn btn-primary">Invia</button>

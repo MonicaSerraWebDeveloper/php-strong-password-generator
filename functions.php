@@ -19,7 +19,6 @@
                     $randomIndex = rand(0, strlen($alphaNumericString));
                     if (!str_contains($newPassword, $alphaNumericString[$randomIndex])) {
                         $newPassword .= $alphaNumericString[$randomIndex];
-                        var_dump($alphaNumericString[$randomIndex]); 
                     };
                 };
             };
