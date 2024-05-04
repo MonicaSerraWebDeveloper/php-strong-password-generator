@@ -2,11 +2,11 @@
 
     require __DIR__ . '/functions.php'; 
 
-    // session_start();
-    // if (!empty($_GET['length-password'])) {
-    //     $_SESSION ['password'] = $officialPassword;
-    //     header('Location: ./thankyou.php');
-    // }
+    session_start();
+    if (!empty($_GET['length-password'])) {
+        $_SESSION ['password'] = $officialPassword;
+        header('Location: ./thankyou.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -21,16 +21,15 @@
     <title>Password sicura</title>
 </head>
 <body>
-    <section style="background-color: darkblue" class="vh-100 d-flex align-items-center" >
+    <section style="background-color: #001632" class="vh-100 d-flex align-items-center" >
         <div class="container p-4 m-auto">
             <div class="row">
                 <div class="col-6 p-4 m-auto ">
                     <div class="d-flex py-4 flex-column align-items-center" style="color: #fff">
-                        <h1>Strong Password Generator</h1>
+                        <h1 style="color: #808b99">Strong Password Generator</h1>
                         <h2>Genera una password sicura</h2>
-                        <p><?php echo $officialPassword ?></p>
                     </div>
-                    <div class="rounded p-4" style="background-color: #ddd">
+                    <div class="rounded p-4" style="background-color: #f8f9fa">
                         <form method="GET">
                             <div class="d-flex py-3">
                                 <label class="col-6" for="length-password">Lunghezza password:</label>
